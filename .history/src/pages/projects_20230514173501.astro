@@ -1,0 +1,32 @@
+---
+// component imports
+import Link from "../components/Link.astro";
+import { Icon } from 'astro-icon';
+import MainLayout from "../layouts/MainLayout.astro";
+
+const projects = [
+  {
+    name: "Thankful Thoughts",
+    description:
+      "ThankfulThoughts is a web app that generates an appreciative sentence of something or someone you are thankful for.",
+    image: "/thankfulthoughts.png",
+    github: "https://github.com/hqasmei/thankful-thoughts",
+    link: "https://thankfulthoughts.io/",
+  },
+ 
+]
+
+
+---
+
+<MainLayout title="Projects" description="My projects Page">
+  <section class="" aria-label="Projects">
+    <h1 class="mb-10 text-center font-bold text-4xl">
+      Projects
+      <hr class="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
+    </h1>
+
+    
+    
+  </section>
+</MainLayout>
