@@ -1,0 +1,47 @@
+---
+import { Icon } from "astro-icon";
+
+import Link from "./Link.astro";
+
+
+//data imports
+import  navData  from "../data/navData";
+
+const ham = document.querySelector('#js-hamburger'); //js-hamburgerの要素を取得し、変数hamに格納
+const nav = document.querySelector('#js-nav'); //js-navの要素を取得し、変数navに格納
+
+ham.addEventListener('click', function () { //ハンバーガーメニューをクリックしたら
+  ham.classList.toggle('menu-open'); // ハンバーガーメニューにactiveクラスを付け外し
+  nav.classList.toggle('menu-open'); // ナビゲーションメニューにactiveクラスを付け外し
+
+});
+---
+
+
+<button  class="mobile-menu__btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="mobile-menu">
+  
+  <ul class="mobile-menu__main">
+    {
+      navData.map((item) => (
+        <Link
+          text={item.name}
+          href={item.path}
+          style="secondary"
+          isFilled={false}
+          data-navLink
+          icon={{
+            name: "mdi:account-plus",
+            side: "left",
+          }}
+        />
+      ))
+    }
+  </ul>
+</nav>
+

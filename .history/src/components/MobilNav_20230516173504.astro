@@ -1,0 +1,38 @@
+---
+import { Icon } from "astro-icon";
+
+import Link from "./Link.astro";
+
+
+//data imports
+import  navData  from "../data/navData";
+---
+
+
+<button class="mobile-menu__btn">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="mobile-menu">
+  
+  <ul class="mobile-menu__main">
+    {
+      navData.map((item) => (
+        <Link
+          text={item.name}
+          href={item.path}
+          style="secondary"
+          isFilled={false}
+          data-navLink
+          icon={{
+            name: "mdi:account-plus",
+            side: "left",
+          }}
+        />
+      ))
+    }
+  </ul>
+</nav>
+

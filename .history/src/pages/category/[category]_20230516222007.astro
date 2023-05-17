@@ -1,0 +1,48 @@
+---
+// components
+import MainLayout from "../../layouts/MainLayout.astro";
+import PostCard from "../../components/PostCard.astro";
+
+import { slugify } from "../../js/utils";
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: { category: slugify("Referece Docs")},
+      props:  { name: "Referece Docs"},
+    },
+    {
+      params: { category: slugify("CSS")},
+      props:  { name: "CSS"},
+    },
+    {
+      params: { category: slugify("React")},
+      props:  { name: "React"},
+    },
+    {
+      params: { category: slugify("WordPress")},
+      props:  { name: "WordPress"},
+    },
+    {
+      params: { category: slugify("Astro")},
+      props:  { name: "Astro"},
+    },
+  ]
+}
+
+
+const { category } = Astro.params;
+const { name } = Astro.props;
+---
+
+<MainLayout title={name}>
+  <section class="container" aria-label={"New Blog Posts"}>
+    <h2 class="h2">Posts about {name}</h2>
+    <div class="post-container">
+      <!-- {
+        allPosts.map((post) => <PostCard frontmatter={post.frontmatter}
+        url={post.url} tagType="h3"/>)
+      } -->
+    </div>
+  </section>
+</MainLayout>
