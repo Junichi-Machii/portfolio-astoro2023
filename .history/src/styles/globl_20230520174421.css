@@ -418,7 +418,7 @@ button {
     display: block;
     margin: auto;
     border-radius: var(--radius-full);
-    height: 280px;
+    height: 300px;
     width: min(300px, 100%);
     box-shadow: var(--shadow-lg);
     object-fit: cover;
@@ -436,7 +436,7 @@ button {
     max-width: var(--content-md);
   }
 }
-@media screen and (min-width:768px)  {
+@media screen and (min-width:768px) and (max-width:1021px) {
 
   /*　画面サイズが768pxから1024pxまではここを読み込む　*/
   .about {
