@@ -44,20 +44,16 @@ import { formatBlogPosts } from "../js/utils";
 
 <script>
 
-  declare global {
-    interface window {
-      netlifyIdentity: any;
-    }
-  }
+  dec
 
   if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", ((user: any) => {
+    window.netlifyIdentity.on("init", user => {
       if (!user) {
         window.netlifyIdentity.on("login", () => {
           document.location.href = "/admin/";
         });
       }
-    }));
+    });
   }
 </script>
 

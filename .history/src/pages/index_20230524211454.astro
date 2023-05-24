@@ -42,25 +42,6 @@ import { formatBlogPosts } from "../js/utils";
   </Sprite.Provider>
 </MainLayout>
 
-<script>
-
-  declare global {
-    interface window {
-      netlifyIdentity: any;
-    }
-  }
-
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", ((user: any) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    }));
-  }
-</script>
-
 
 <style>
 button {

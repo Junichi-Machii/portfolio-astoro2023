@@ -51,13 +51,13 @@ import { formatBlogPosts } from "../js/utils";
   }
 
   if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", ((user: any) => {
+    window.netlifyIdentity.on("init", ((:)) => {
       if (!user) {
         window.netlifyIdentity.on("login", () => {
           document.location.href = "/admin/";
         });
       }
-    }));
+    });
   }
 </script>
 
