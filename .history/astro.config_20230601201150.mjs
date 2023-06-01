@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://stargazers.club',
+  
   integrations: [image({
     serviceEntryPoint: '@astrojs/image/sharp'
   }), tailwind(), sitemap()]
